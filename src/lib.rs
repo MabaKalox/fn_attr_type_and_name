@@ -18,9 +18,11 @@ pub fn fn_type_and_name_attr(_attr: TokenStream, item: TokenStream) -> TokenStre
 
     let bare_fn_type = item_fn_into_type_bare_fn(input_fn.clone());
     let type_func_type_stream = quote! {
+        #[allow(non_camel_case_types)]
         #visibility type #ident_fn_type = #bare_fn_type;
     };
     let const_func_name_stream = quote! {
+        #[allow(non_upper_case_globals)]
         #visibility const #ident_fn_name: &'static str = #fn_name_string;
     };
 
