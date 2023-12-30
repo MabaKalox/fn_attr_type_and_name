@@ -1,0 +1,15 @@
+[package]
+name = "fn_type_and_name_attr"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[lib]
+proc-macro = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+quote = "1.0.33"
+syn = { version = "2.0.43" , features = ["full"]}
